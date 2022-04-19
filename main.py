@@ -6,7 +6,7 @@ pygame.display.set_caption("Word Crushh")
 
 clock = pygame.time.Clock()
 
-counter, text = 20, '20'.rjust(3)
+counter, text = 20, '20'.rjust(20)
 pygame.time.set_timer(pygame.USEREVENT, 1000)
 font = pygame.font.SysFont('Consolas', 30)
 
@@ -14,7 +14,7 @@ run = True
 timeron = False
 while run:
   screen.fill((255, 255, 255))
-  pygame.draw.rect(screen, (200, 200, 0), (50, 250, 50, 50), border_radius=5)
+  pygame.draw.rect(screen, (50, 50, 0), (30, 10, 30, 30), border_radius=5)
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       break
@@ -22,7 +22,7 @@ while run:
     elif event.type == pygame.MOUSEBUTTONUP:
             x, y = pygame.mouse.get_pos()
 
-            if x in range(50, 100) and y in range(250, 300):
+            if x in range(30, 60) and y in range(10, 40):
                 print("correct!")
                 timeron = True
     for e in pygame.event.get():
