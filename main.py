@@ -21,11 +21,12 @@ while run:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       run = False
-    break       
-    if e.type == pygame.USEREVENT:
+      break       
+    if event.type == pygame.USEREVENT:
       counter -= 1
-    text = str(counter).rjust(20) if counter > 0 else 'time up!'
+      text = str(counter).rjust(20) if counter > 0 else 'times up!'.rjust(20)
       
+
     elif event.type == pygame.MOUSEBUTTONUP:
             x, y = pygame.mouse.get_pos()
 
@@ -34,8 +35,8 @@ while run:
                 timeron = True
 
 
-    screen.blit(font.render(text, True, (0, 0, 0)), (32, 16))
-   # pygame.display.flip()
+    screen.blit(font.render(text, True, (0, 0, 0)), (32, 10))
+    #pygame.display.flip()
     if timeron == True: 
       clock.tick(60)
 
